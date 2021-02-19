@@ -9,7 +9,7 @@ Maven
 TestNG
 DDT
 
-How to run test
+**How to run test**
 
 pre-requisits Install Java and set up. Install Maven and set up
 
