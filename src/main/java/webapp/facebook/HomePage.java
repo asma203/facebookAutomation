@@ -22,6 +22,9 @@ public class HomePage extends PageBase {
 
 	@FindBy(name = "reg_email__")
 	WebElement regemail;
+	
+	@FindBy(name = "reg_email_confirmation__")
+	WebElement confiregemail;
 
 	@FindBy(name = "reg_passwd__")
 	WebElement regpassword;
@@ -35,11 +38,11 @@ public class HomePage extends PageBase {
 	@FindBy(name = "birthday_year")
 	WebElement birthyear;
 
-	@FindBy(xpath = "//*[@id=\"u_o_2_ws\"]")
+	@FindBy(name = "sex")
 	WebElement selectFemale;
 
-	@FindBy(name = "websubmit")
-	WebElement submitregbtn;
+	@FindBy(xpath="//*[@id='u_0_i']")
+	public WebElement submitregbtn;
 
 	// Open Register window In homepage
 	public void regitserNew() {
@@ -47,20 +50,27 @@ public class HomePage extends PageBase {
 	}
 
 	// Complete Register window in HomePage
-	public void completeRegister(String firstName, String lastName, String email, String password, String day,
-			String Month, String year) {
+	public void completeRegister(String firstName, String lastName, String email, String confEmail,String password, String day,
+			String Month, String year) throws InterruptedException {
 		setTextElementText(firstnametxt, firstName);
 		setTextElementText(lastnametxt, lastName);
 		setTextElementText(regemail, email);
+		setTextElementText(confiregemail, confEmail);
 		setTextElementText(regpassword, password);
 		select = new Select(birthday);
 		select.selectByValue(day);
 		select = new Select(birthmonth);
-		select.selectByValue(Month);
+		select.selectByVisibleText(Month);
 		select = new Select(birthyear);
-		select.selectByValue(year);
+		select.selectByVisibleText(year);
+		Thread.sleep(1000);
 		clickButton(selectFemale);
+		Thread.sleep(2000);
+		
+	}
+	public void validateReg() {
 		clickButton(reisterbtn);
 
+		
 	}
 }

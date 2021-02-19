@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="facebook login">
+	<parameter name="browser" value="chrome">
+	</parameter>
+	<test name="regression test">
+		<classes>
+			<class name="webapp.facebook.LoginTest" />
+		</classes>
+	</test>
+</suite> 

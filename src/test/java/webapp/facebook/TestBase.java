@@ -19,8 +19,9 @@ public class TestBase {
 				"ChromeDriver\\chromedriver1.exe");
 		driver = new ChromeDriver();
 		driver.navigate().to("https://www.facebook.com/");
+		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 	}
 //	  @AfterMethod public void Close()
