@@ -24,9 +24,8 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 	}
-//	  @AfterMethod public void Close()
-//	  {
-//		  driver.quit();
-//		  }
+	  @AfterMethod public void Close()	  {
+		  driver.quit();
+		  }
 
 }

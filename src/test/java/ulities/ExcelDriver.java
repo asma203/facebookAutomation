@@ -5,10 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -18,7 +15,7 @@ public class ExcelDriver {
 	static FileInputStream inputStream = null;
 
 	public FileInputStream getFileInputStram() {
-		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\ulities\\data.xlsx";
+		String filePath = System.getProperty("user.dir") + ("\\src\\test\\java\\ulities\\data.xlsx");
 		File sourceFile = new File(filePath);
 		try {
 			inputStream = new FileInputStream(sourceFile);
@@ -32,9 +29,10 @@ public class ExcelDriver {
 	public Object[][] getExcelData() throws IOException {
 		inputStream = getFileInputStram();
 		XSSFWorkbook wb = new XSSFWorkbook(inputStream);
+		Sheet sh = wb.getSheet("data");
 		XSSFSheet sheet = wb.getSheetAt(0);
-		int totalNumberOfRows = sheet.getLastRowNum()+1;
-		int totalNumberOfColumns = 7;
+		int totalNumberOfRows = 3;
+		int totalNumberOfColumns = 2;
 		String[][] arrayOfExcelData = new String[totalNumberOfRows][totalNumberOfColumns];
 		for (int i = 0; i < totalNumberOfRows; i++) {
 			for (int j = 0; j < totalNumberOfColumns; j++) {
