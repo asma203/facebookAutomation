@@ -11,7 +11,7 @@ Excel sheet
 
 
 
-#**Provided solution **
+# Provided solution 
 1- Add 3 test accounts on my app on facebook
 2- Add account Email and password to excel sheet as data source 
 3- Using Data driven framework to identify data from excel sheet in "ExcelDriver" class 
@@ -20,7 +20,7 @@ Excel sheet
 
 
 
-#**How to run test**
+# How to run test
 1- pre-requisits Install Java and set up. Install Maven, JRE
 2- Add Dependency in POM File: Junit, apache poi, apache poi-ooxml (both should be same version), Selenium
 3- Add chrome driver path to "TestBase"
