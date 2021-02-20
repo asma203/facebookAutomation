@@ -10,6 +10,7 @@ import java.io.IOException;
 public class LoginTest extends TestBase {
 	LoginPage loginpageObject;
 
+	//login with dataprovider 
 	@Test(dataProvider = "ExcelDataa")
 	public void fbLogin(String email, String Password) {
 		loginpageObject = new LoginPage(driver);
